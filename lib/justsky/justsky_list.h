@@ -9,18 +9,18 @@ struct ListHeader
 };
 
 #define list_init(list, initial_capacity)                                                 \
-do {                                                                              \
+do {                                                                                      \
     ListHeader *header = malloc(sizeof(*list) * (initial_capacity) + sizeof(ListHeader)); \
-    header->count = 0;                                                            \
+    header->count = 0;                                                                    \
     header->capacity = (initial_capacity);                                                \
-    list = (void *)(header + 1);                                                  \
-} while (0)                                                                       \
+    list = (void *)(header + 1);                                                          \
+} while (0)                                                                               \
 
-#define list_clear(list)                                                        \
-    do {                                                                        \
-    ListHeader *header = (ListHeader *)(list) - 1; \
-    header->count = 0;                                                          \
-} while (0)                                                                     \
+#define list_clear(list)                                                                  \
+    do {                                                                                  \
+    ListHeader *header = (ListHeader *)(list) - 1;                                        \
+    header->count = 0;                                                                    \
+} while (0)                                                                               \
 
 #define list_add(list, item)                                                                         \
 do {                                                                                                 \
