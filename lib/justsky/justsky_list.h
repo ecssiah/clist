@@ -16,11 +16,11 @@ do {                                                                            
     list = (void *)(header + 1);                                                          \
 } while (0)                                                                               \
 
-#define list_clear(list)                                                                  \
-    do {                                                                                  \
-    ListHeader *header = (ListHeader *)(list) - 1;                                        \
-    header->count = 0;                                                                    \
-} while (0)                                                                               \
+#define list_clear(list)                           \
+do {                                               \
+    ListHeader *header = (ListHeader *)(list) - 1; \
+    header->count = 0;                             \
+} while (0)                                        \
 
 #define list_add(list, item)                                                                         \
 do {                                                                                                 \
@@ -46,5 +46,8 @@ do {                                                                            
 #define list_len(list)        ((ListHeader *)(list) - 1)->count
 #define list_capacity(list)   ((ListHeader *)(list) - 1)->capacity
 
-#define list_for(list, item_ptr)  for (item_ptr = list; item_ptr < list + ((ListHeader *)(list) - 1)->count; ++item_ptr)
+#define list_for(list, item_ptr)                              \
+    for (item_ptr = list;                                     \
+         item_ptr < list + ((ListHeader *)(list) - 1)->count; \
+         ++item_ptr)                                          \
 
