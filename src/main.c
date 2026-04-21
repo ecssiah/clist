@@ -9,7 +9,7 @@ struct Vec3
     f32 z;
 };
 
-#define vec3_init(x, y, z) ((Vec3){ (x), (y), (z) })
+#define vec3(x, y, z) ((Vec3){ (x), (y), (z) })
 
 int main()
 {
@@ -40,9 +40,9 @@ int main()
     list_add(int_list, 1);
     list_add(int_list, 0);
 
-    list_add(vec3_list, vec3_init(1.0f, 2.0f, 3.0f));
-    list_add(vec3_list, vec3_init(2.0f, 4.0f, 6.0f));
-    list_add(vec3_list, vec3_init(4.0f, 8.0f, 12.0f));
+    list_add(vec3_list, vec3(1.0f, 2.0f, 3.0f));
+    list_add(vec3_list, vec3(2.0f, 4.0f, 6.0f));
+    list_add(vec3_list, vec3(4.0f, 8.0f, 12.0f));
 
     f32 *float_item;
     list_for(float_list, float_item)
@@ -64,7 +64,7 @@ int main()
 
     list_clear(vec3_list);
 
-    list_add(vec3_list, vec3_init(13.0f, 8.0f, 13.0f));
+    list_add(vec3_list, vec3(13.0f, 8.0f, 13.0f));
     
     Vec3 *vec3_item;
     list_for(vec3_list, vec3_item)
