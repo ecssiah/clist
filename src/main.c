@@ -45,7 +45,7 @@ int main()
     list_add(vec3_list, vec3(4.0f, 8.0f, 12.0f));
 
     f32 *float_item;
-    list_for(float_list, float_item)
+    list_for(float_item, float_list)
     {
         printf("%f\n", *float_item);
     }
@@ -54,7 +54,7 @@ int main()
     printf("Capacity: %zu\n", list_capacity(float_list));
 
     i32 *int_item;
-    list_for(int_list, int_item)
+    list_for(int_item, int_list)
     {
         printf("%i\n", *int_item);
     }
@@ -65,9 +65,9 @@ int main()
     list_clear(vec3_list);
 
     list_add(vec3_list, vec3(13.0f, 8.0f, 13.0f));
-    
+
     Vec3 *vec3_item;
-    list_for(vec3_list, vec3_item)
+    list_for(vec3_item, vec3_list)
     {
         printf("%f %f %f\n", vec3_item->x, vec3_item->y, vec3_item->z);
     }

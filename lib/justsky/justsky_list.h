@@ -46,8 +46,4 @@ do {                                                                            
 #define list_len(list)        ((ListHeader *)(list) - 1)->count
 #define list_capacity(list)   ((ListHeader *)(list) - 1)->capacity
 
-#define list_for(list, item_ptr)                              \
-    for (item_ptr = list;                                     \
-         item_ptr < list + ((ListHeader *)(list) - 1)->count; \
-         ++item_ptr)                                          \
-
+#define list_for(item, list) for (item = list; item < list + list_len(list); ++item)
